@@ -18,8 +18,15 @@ public class InsertSort {
         int n = arr.length;
         for (int i = 0; i < n; i++) {
             //寻找元素arr[i]合适的插入位置     arr[j]>arr[j-1]  false则-1,所以交换
-            for (int j = i; j > 0 && arr[j].compareTo(arr[j - 1]) < 0; j--)
-                swap(arr, j, j - 1);
+            //写法一：性能不如选择排序快
+            // for (int j = i; j > 0 && arr[j].compareTo(arr[j - 1]) < 0; j--)
+            //    swap(arr, j, j - 1);
+            //写法二
+            Comparable e = arr[i];
+            int j = i;
+            for (; j > 0 && arr[j - 1].compareTo(e) > 0; j--)
+                arr[j] = arr[j - 1];
+            arr[j] = e;
         }
     }
 

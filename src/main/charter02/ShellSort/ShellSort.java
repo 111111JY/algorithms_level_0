@@ -1,4 +1,4 @@
-package main.charter02;
+package main.charter02.ShellSort;
 
 /**
  * Created by JY on 2018/9/3 0003
